@@ -1,0 +1,104 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+from tkinter import *
+
+
+
+def mul():
+    if a_input.get() == "" :
+        display_result.insert(0, 'a数值为空')
+    elif b_input.get() == "":
+        display_result.insert(0, 'b数值为空')
+    else:
+        a = int(a_input.get())
+        b = int(b_input.get())
+        c = a * b
+        display_result.insert(0, f"{c}(乘法结果)")
+        print(f"{c}(乘法结果)")
+def add():
+    if a_input.get() == "":
+        display_result.insert(0, 'a数值为空')
+    elif b_input.get() == "":
+        display_result.insert(0, 'b数值为空')
+    else:
+        a = int(a_input.get())
+        b = int(b_input.get())
+        c = a + b
+        display_result.insert(0, f"{c}(加法结果)")
+        print(f"{c}(加法结果)")
+
+def subtract():
+    if a_input.get() == "" :
+        display_result.insert(0, 'a数值为空')
+    elif b_input.get() == "":
+        display_result.insert(0, 'b数值为空')
+    else:
+        a = int(a_input.get())
+        b = int(b_input.get())
+        c = a - b
+        display_result.insert(0, f"{c}(减法结果)")
+        print(f"{c}(减法结果)")
+
+def divide():
+    if a_input.get() == "":
+        display_result.insert(0, 'a数值为空')
+    elif b_input.get() == "":
+        display_result.insert(0, 'b数值为空')
+    elif b_input.get() == "0":
+        display_result.insert(0, '零不能做被除数')
+    else:
+        a = int(a_input.get())
+        b = int(b_input.get())
+        c = a / b
+        display_result.insert(0, f"{c}(除法结果)")
+        print(f"{c}(除法结果)")
+
+def power():
+    if a_input.get() == "":
+        display_result.insert(0, '数值为空')
+    elif b_input.get() == "":
+        display_result.insert(0, '数值为空')
+    else:
+        a = int(a_input.get())
+        b = int(b_input.get())
+        c = a ** b
+        display_result.insert(0, f"{c}(平方结果)")
+        print(f"{c}(平方结果)")
+
+
+tk = Tk()
+tk.title("计算器")
+tk.geometry("300x500")
+
+
+a_input = Entry(tk, width=10)
+b_input = Entry(tk, width=10)
+c_input = Entry(tk, width=10)
+d_input = Entry(tk, width=10)
+multiply_submit = Button(tk,width=6, command=mul, text='乘法')
+add_submit = Button(tk, width=6, command=add, text='加法')
+divide_submit = Button(tk,width=6, command=divide, text="除法")
+subtract_submit = Button(tk, width=6, command=subtract, text='减法')
+power_submit = Button(tk, width=6, command=power, text='平方')
+new_submit = Button(tk, width=8, command=newWindows, text='插入')
+display_result = Listbox(tk, width=10, height=10)
+
+
+if __name__ == '__main__':
+    print("请输入a和b的数值")
+    print(a_input.get(), b_input.get(), c_input.get(), d_input.get())
+    Label(tk, text='a:  ').pack()
+    a_input.pack()
+    Label(tk, text='b:').pack()
+    b_input.pack()
+    c_input.pack()
+    d_input.pack()
+    multiply_submit.pack()
+    add_submit.pack()
+    divide_submit.pack()
+    subtract_submit.pack()
+    power_submit.pack()
+    new_submit.pack()
+    display_result.pack()
+    tk.mainloop()
