@@ -81,7 +81,6 @@ add_submit = Button(tk, width=6, command=add, text='加法')
 divide_submit = Button(tk,width=6, command=divide, text="除法")
 subtract_submit = Button(tk, width=6, command=subtract, text='减法')
 power_submit = Button(tk, width=6, command=power, text='平方')
-new_submit = Button(tk, width=8, command=newWindows, text='插入')
 display_result = Listbox(tk, width=10, height=10)
 
 
